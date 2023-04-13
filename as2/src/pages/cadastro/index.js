@@ -23,9 +23,9 @@ class Cadastro extends Component{
     async gravar(){
         
         await firebase.auth().createUserWithEmailAndPassword (this.state.email, this.state.senha)
-        .then((retorno)=>{
+        .then(async (retorno)=>{
 
-            firebase.firestore().collection("usuario").doc(retorno.user.uid).set({
+            await firebase.firestore().collection("usuario").doc(retorno.user.uid).set({
                 nome: this.state.nome,
                 sobrenome: this.state.sobrenome,
                 nascimento: this.state.nascimento

@@ -6,7 +6,7 @@ const Contato = () => {
         <div>
             <h1>Contato</h1>
             <h2>Leonardo Paim</h2>
-            <h3>leonardodppaim@gmail.com</h3>
+            <Link to='https://github.com/leonardodppaim/reactapp.git'><h3>leonardodppaim/reactapp</h3></Link>
             <Link to='/'><button>Inicio</button></Link>
         </div>
     )

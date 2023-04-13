@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
 import firebase from 'firebase';
 
+
 class Login extends Component{
 
     constructor(props){
@@ -13,13 +14,16 @@ class Login extends Component{
         this.acessar=this.acessar.bind(this);
     }
 
+   
+
     async acessar(){
         await firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.senha)
         .then(()=>{
             window.location.href="./arearestrita";
         })
         .catch((erro)=>{
-            console.log("Usuario invalido");
+            console.log("Falha no login");
+            alert("Usuario ou senha invalido");
         })
 
     }
